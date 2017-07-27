@@ -16,6 +16,7 @@
             <div class="rest-address">
                 {{restaurant.address}}
             </div>
+
         </div>
     </div>
     <div class="rest-extra">
@@ -23,7 +24,9 @@
         <div><small>Cuisines:</small></div>
         <div><small>Cost for Two: </small></div>
         <div><small>Hours:</small></div>
-        <div ng-if="restaurant.bestDish"><small>Recommended: </small></div>
+        <div ng-if="restaurant.bestDish"><small>Recommended: </small>
+<div>  <img src="{{restaurant.bestDish.image}}" height="200" width="200" margin-top="400"></div>
+        </div>
     </div>
     <div class="value">
         <div>{{restaurant.cuisines}}</div>
@@ -44,10 +47,5 @@
     {{ingredient}}
     </li>
     </ol>
-</div>
-<div>
-menu card is here
-
-
 </div>
 </div>

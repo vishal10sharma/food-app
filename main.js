@@ -74,27 +74,31 @@ foodieApp.controller('restaurantController',function($scope,$routeParams,$http) 
 	cost: '2200',
 	hours: '12 Noon to 1 AM (Mon-Sun)',
  id:1,
+ bestDish: {
+ name: 'thali',
+ image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBkSTeemnRHo-dVwUNF4SAHBf5XmRvUBcW4DIwxQX-kn6ergWlSg'
+					 },
 	image: 'https://b.zmtcdn.com/data/pictures/chains/2/308022/dabd30bd0b000ea859ada9a08a0132fc.jpg'
 },
 {
-	name: 'Dominos',
+	name: 'pizza hut',
 	address: '12/24, Level 1, Block A , Big Bazzar, Baddi',
 	location: 'Baddi',
 	category: 'Pizza',
 	vote: '4.7',
-	cuisines: 'Italian', 
+	cuisines: 'Italian',
 	cost: '500',
 	hours: '12 Noon to 12 AM (Mon-Sun)',
  id :2,
  bestDish: {
 	name: 'Corn Pizza',
-	image: 'http://noblepig.com/images/2016/06/Avocado-and-Three-Bean-Salad-is-perfect-for-a-summertime-barbecue-side-dish.JPG'
+	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXNtSKvxBmRHUql51CJMTwHGrdL-JSyKmMnmKVzmL7xFPBBxFu9g'
            },
-	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt_2XFEpZvUI_wAMAqEnnWoVr61jAej6k4VgzwRr-yONk2Es-h'
+	image: 'http://static5.businessinsider.com/image/53908351ecad04ca746ba577-480/pizza-hut-cmo-sp.jpg'
 },
 {
-	name: 'Silver Spoon Restaurant & Banquet Hall barnala',
-	address: 'White Wave Building, Opposite DC Complex, Handiaya Road, Barnala, Punjab 148101',
+	name: 'Ananda Bhavan',
+	address: 'SCF 4, Phase 1, Housing Board, Sai Road, Near Old Malhotra Hospital., Baddi, Himachal Pradesh 173205',
 	location: 'Connaught Place',
 	category: 'Family Restaurant',
 	vote: '3.9',
@@ -102,6 +106,10 @@ foodieApp.controller('restaurantController',function($scope,$routeParams,$http) 
 	cost: '1000',
 	hours: '8 AM to 11 PM (Mon-Sun)',
  id:3,
+ bestDish: {
+ name: 'Corn Pizza',
+ image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBkSTeemnRHo-dVwUNF4SAHBf5XmRvUBcW4DIwxQX-kn6ergWlSg'
+					 },
 	image: 'http://lovethiscitytv.com/wp-content/uploads/2015/06/Top-25-New-Restaurants-in-Toronto2.jpeg'
 },
 {
@@ -114,7 +122,12 @@ foodieApp.controller('restaurantController',function($scope,$routeParams,$http) 
 	cost: '400',
 	hours: '10 AM to 12 AM (Mon-Sun)',
  id :4,
-	image: 'http://restaurant.business.brookes.ac.uk/images/slideshow/restaurant.jpg'
+ bestDish: {
+ name: 'pav bhaji',
+ image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiiR4kvUd7mg9EpmTMsVgANLKJmsb1_Uckcwlo0O2VCjqsQFQJ'
+
+					 },
+	image: 'http://4.bp.blogspot.com/-TlryN0pcF5E/TqJAEMbrT9I/AAAAAAAACfw/A_sO0P2Df_4/s1600/P1030556.JPG'
 },
 {
 	name: 'Pizza Nation',
