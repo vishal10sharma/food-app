@@ -35,29 +35,19 @@ foodieApp.controller('restaurantController',function($scope,$routeParams,$http) 
 	        'method': 'POST',
 	        'url': 'https://api.clarifai.com/v2/models/bd367be194cf45149e75f01d59f77ba7/outputs',
 	        'headers': {
-	            'Authorization': 'Key f3c1abe985594b70b378874adc2b8c42',
+	            'Authorization': 'Key affe7e5ac57b4034a26746c9944e6046',
 	            'Content-Type': 'application/json'
 	        },
-	        'data': data,
-	       /* success: function (response) {
-	           // console.log(response.outputs[0]);
-				var ingredients = response.outputs[0].data.concepts;
-	            var list = '';
-	            for (var i =0;i < ingredients.length;i++) {
-	                list += '<div class="ingredient">' + ingredients[i].name + '</div>'
-	            }
-	           // $('.ingredients').html(list);
-	        },
-	        error: function (xhr) {
-	           // console.log(xhr);
-	        } */
+	        'data': data
+
 	    }).then(function (response) {
 								var ingredients = response.data.outputs[0].data.concepts;
 						for (var i =0;i < ingredients.length;i++) {
 						$scope.ingredients.push(ingredients[i].name);
+						$scope.probabilityvalue.push(ingredients[i].value);
 						}
     		// $('.ingredients').html(list);
-    		console.log(list);
+    		//console.log(list);
         }, function (xhr) {
         	console.log(xhr);
         })
@@ -140,13 +130,40 @@ foodieApp.controller('restaurantController',function($scope,$routeParams,$http) 
 	hours: '11 AM to 11 PM (Mon-Sun)',
  id :5,
  bestDish: {
-	name: 'Corn Pizza',
-	image: 'http://noblepig.com/images/2016/06/Avocado-and-Three-Bean-Salad-is-perfect-for-a-summertime-barbecue-side-dish.JPG'
+	name: 'Layered Mexican Delight',
+	image: 'https://irepo.primecp.com/1006/76/182716/Layered-Mexican-Delight_Medium_ID-661394.jpg?v=661394'
           },
 	image: 'https://media.timeout.com/images/101564675/630/472/image.jpg'
 }]
 	$scope.restaurant = restaurants[$routeParams.id - 1];
+	$scope.ingredients = [];
+			$scope.probabilityvalue=[];
 
+			$scope.checkVegorNonVeg = function() {
+				var flag_quit =0;
+				ing_list = angular.copy($scope.ingredients); //hard copy
+				prob_value= $scope.probabilityvalue;
+				var elements = prob_value.filter(function(a){return a > 0.85;});
+				ing_list.splice(elements.length,20);
+				var nonveg = ["egg","meat","bacon","chicken","sushi","pork","steak"];
+				var additionnonveg = "<div><img src='http://21425-presscdn.pagely.netdna-cdn.com/wp-content/uploads/2013/05/non-veg-300x259.jpg' class='vegnonveg' ></div>"
+				var additionveg = "<div><img src='http://21425-presscdn.pagely.netdna-cdn.com/wp-content/uploads/2013/05/veg-300x259.jpg' class='vegnonveg' ></div>"
+
+				for(j=0;j<ing_list.length;j++){
+					for(i=0;i<nonveg.length;i++){
+						if(ing_list[j] == nonveg[i]){
+							flag_quit=1;
+							break;
+						}
+					}
+				if(flag_quit==1){
+					$(".rest-extra").append(additionnonveg);
+					break;
+				}
+
+			}
+			if(flag_quit==0){$(".rest-extra").append(additionveg);}
+		}
 })
 //controller bnaya h....
 foodieApp.controller('mainController',function($scope) {
@@ -164,7 +181,7 @@ foodieApp.controller('mainController',function($scope) {
 	image: 'https://b.zmtcdn.com/data/pictures/chains/2/308022/dabd30bd0b000ea859ada9a08a0132fc.jpg'
 },
 {
-	name: 'Dominos',
+	name: 'pizza hut',
 	address: '12/24, Level 1, Block A , Big Bazzar, Baddi',
 	location: 'Baddi',
 	category: 'Pizza',
@@ -173,11 +190,11 @@ foodieApp.controller('mainController',function($scope) {
 	cost: '500',
 	hours: '12 Noon to 12 AM (Mon-Sun)',
  id :2,
-	image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt_2XFEpZvUI_wAMAqEnnWoVr61jAej6k4VgzwRr-yONk2Es-h'
+	image: 'http://static5.businessinsider.com/image/53908351ecad04ca746ba577-480/pizza-hut-cmo-sp.jpg'
 },
 {
-	name: 'Silver Spoon Restaurant & Banquet Hall barnala',
-	address: 'White Wave Building, Opposite DC Complex, Handiaya Road, Barnala, Punjab 148101',
+	name: 'Ananda Bhavan',
+	address: 'SCF 4, Phase 1, Housing Board, Sai Road, Near Old Malhotra Hospital., Baddi, Himachal Pradesh 173205',
 	location: 'Connaught Place',
 	category: 'Family Restaurant',
 	vote: '3.9',

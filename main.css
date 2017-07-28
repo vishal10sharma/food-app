@@ -59,9 +59,9 @@ body {
 }
 
 .restaurant {
-    background-color: white;
+    background:url("http://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg") ;
     position: relative;
-    width: 600px;
+color : white;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2rem;
@@ -72,6 +72,7 @@ body {
 .rest-wrapper {
     display: flex;
     font-family: sans-serif;
+    color : white;
 }
 
 .rest-wrapper .image {
@@ -82,18 +83,20 @@ body {
     border-radius: 4px;
 }
 
+
 .rest-wrapper .rest-name {
     font-size: 24px;
-    color: #cb202d;
+    color: white;
+
 }
 
 .rest-wrapper .rest-category {
-    color: #89959B;
+    color: white;
     text-transform: uppercase;
 }
 
 .rest-wrapper .rest-address {
-    color: #89959B;
+    color: white;
 }
 
 .rest-extra {
@@ -101,11 +104,13 @@ body {
     margin-top: 1rem;
     border-top: 1px solid #e7e7e7;
     padding: 1rem;
+    color : white;
+
 }
 
 .rest-extra .type {
     text-transform: uppercase;
-     color: #89959B;
+     color: white;
      flex: none;
      margin-right: 2rem;
 }
@@ -145,10 +150,17 @@ body {
 }
 
 .bestDish .button {
-    display: inline-block;
-    background-color:#cb202d;
+  display: inline-block;
+    background-color: #cb202d;
     color: white;
     padding: 0.4rem 1rem;
     border-radius: 4px;
     cursor: pointer;
+}
+.vegnonveg {
+    width: 72px;
+    height: 61px;
+    position: absolute;
+
+    top: 300px;
 }
