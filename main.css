@@ -36,7 +36,8 @@ body {
 }
 
 #app .login {
-    background-color: #cb202d;
+    background:url("https://www.photocase.com/photos/1169767-healthy-eating-life-style-background-picture-food-design-photocase-stock-photo-large.jpeg");
+background-size: cover;
     height: 100vh;
     min-height: 500px;
     display: flex;
@@ -48,11 +49,12 @@ body {
 #app .login-form {
     width: 400px;
     margin-left: auto;
-    margin-right: auto;
+  margin-right: 20px;
     background-color: white;
     padding: 1rem;
     padding-top: 0;
     border-radius: 4px;
+    margin-top: 200px;
 }
 .hero {
     margin-bottom: 2rem;
